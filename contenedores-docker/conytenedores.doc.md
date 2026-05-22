@@ -37,8 +37,8 @@ docker run -d --name Server-MariadbG1 -p 3343:3306 -e MARIADB_ROOT_PASSWORD=1234
 ### contenedor de postgres con volumen 
 ```
 docker volume create v-postgresg1
-docker run -d --name Server-postgresg1 -p 5455:5432 -e POSTGRES-123456 -v v-postgresG1:/var/lib/mysql 8763a
-
+docker run -d --name Server-postgresg1 -p 5455:5432 -e POSTGRES-123456 -v v-postgresG1:/var/lib/postgresql/data   \
+   bbb88
 -e POSTGRES_PASSWORD 
 ```
 
@@ -47,8 +47,8 @@ docker run -d --name Server-postgresg1 -p 5455:5432 -e POSTGRES-123456 -v v-post
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=p@ssw@rd" \
    -p 1450:1433 --name SQLServerG1 \
    -d -v v-sqlserverg1:/var/opt/mssql/data/ \
-   //se elimina
-   mcr.microsoft.com/mssql/server:2022-latest
+   e07b9
+
 
 
 v-sqlserverg1
