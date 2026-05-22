@@ -42,6 +42,16 @@ docker run -d --name Server-postgresg1 -p 5455:5432 -e POSTGRES-123456 -v v-post
 -e POSTGRES_PASSWORD 
 ```
 
+### contenedor de SQLSERVER con volumen 
+´´´Docker 
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=p@ssw@rd" \
+   -p 1450:1433 --name SQLServerG1 \
+   -d -v v-sqlserverg1:/var/opt/mssql/data/ \
+   //se elimina
+   mcr.microsoft.com/mssql/server:2022-latest
+
+
+v-sqlserverg1
 
 ###comandos de docker
 
