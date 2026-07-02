@@ -117,6 +117,39 @@ Una empresa encargada de realizar venta de productos:
  ![Resultado Ejercicio 3](../img/Imagen_4.png)
 ---
 ## EJERCICIO 5
-## Diagrama
+
+## 1. Entidades y Atributos Identificados
+* **DEPARTAMENTO**
+  * Nombre (Único / Clave)
+  * Número (Único / Clave)
+  * Ubicaciones (Atributo multivalorado: puede tener varias)
+* **PROYECTO**
+  * Nombre (Único / Clave)
+  * Número (Único / Clave)
+  * Ubicación (Única)
+* **EMPLEADO**
+  * Número de Seguro Social (SSN) (Clave)
+  * Nombre
+  * Dirección
+  * Salario
+  * Sexo
+  * Fecha de nacimiento
+* **DEPENDIENTE** (Entidad Débil - depende del empleado)
+  * Primer Nombre
+  * Sexo
+  * Fecha de nacimiento
+  * Parentesco / Relación
+
+## 2. Relaciones y Reglas de Negocio Clave
+* **Administración de Departamento (1:1):** Un departamento es administrado por un solo empleado. Se debe registrar la **Fecha de inicio** de la gestión.
+* **Control de Proyectos (1:N):** Un departamento controla muchos proyectos; un proyecto pertenece a un solo departamento.
+* **Asignación de Departamento (1:N):** Un empleado pertenece a un único departamento, pero un departamento tiene muchos empleados.
+* **Trabajo en Proyectos (N:M):** Un empleado puede trabajar en varios proyectos y un proyecto puede tener muchos empleados. Se debe registrar las **Horas semanales** trabajadas en cada combinación.
+* **Supervisión (Recursiva 1:N):** Un empleado tiene un supervisor directo (que también es un empleado).
+* **Dependientes (1:N):** Un empleado puede tener muchos dependientes registrados para el seguro.
+## Diagrama 5
  ![Resultado Ejercicio 3](../img/EJERCICIO5.drawio.png)
+
+## Diagrama 6
+
  ![Resultado Ejercicio 3](../img/Ejercicio_1%20(1).png)
