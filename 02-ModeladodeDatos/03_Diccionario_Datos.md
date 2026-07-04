@@ -169,7 +169,7 @@ Registra la inscripción de los alumnos en sus respectivos grupos y sus califica
 
 
 
- ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO1.Png)
+ ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO1.png)
 
 ## EJECICIO 2
 # Diccionario de Datos de la base de datos de control escolar (Profesores, Cursos y Especialidades)
