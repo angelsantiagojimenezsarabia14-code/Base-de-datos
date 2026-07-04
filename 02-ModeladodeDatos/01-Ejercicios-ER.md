@@ -24,7 +24,7 @@ En un hospital se rguistra informacion de sus pacientes de cada pacioente se des
 4. No puede existir un paciente sin expediente
   
   ## Diagrama
- ![Resultado Ejercicio 1](../img/Ejercicio_1.png)
+ ![Resultado Ejercicio 1](../img/E-R/Ejercicio_1.png)
  
 
 ## Ejercicio 2:
@@ -54,7 +54,7 @@ Se deve realizar lo siguiente:
 - Determinar la cardinalidad
 - Determinar la participacion 
 ## Diagrama
- ![Resultado Ejercicio 2](../img/Ejercicio2.png)
+ ![Resultado Ejercicio 2](../img/E-R/Ejercicio2.png)
 --
 ## Ejercicio 3:
 
@@ -81,7 +81,7 @@ Reglas del negocio
 Relacion en las 2 entidades **INSCRIBE**
 
 ## Diagrama
- ![Resultado Ejercicio 3](../img/Ejercicio_3.png)
+ ![Resultado Ejercicio 3](../img/E-R/Ejercicio_3.png)
  ----
 ## EJERCICIO 4
 
@@ -114,7 +114,7 @@ Una empresa encargada de realizar venta de productos:
 8.  El detalle de pedido no existe sin producto 
 9. El detalle almacena cantidad y precio de venta
 ## Diagrama 4
- ![Resultado Ejercicio 3](../img/Imagen_4.png)
+ ![Resultado Ejercicio 3](../img/E-R/Imagen_4.png)
 ---
 ## EJERCICIO 5
 
@@ -148,8 +148,8 @@ Una empresa encargada de realizar venta de productos:
 * **Supervisión (Recursiva 1:N):** Un empleado tiene un supervisor directo (que también es un empleado).
 * **Dependientes (1:N):** Un empleado puede tener muchos dependientes registrados para el seguro.
 ## Diagrama 5
- ![Resultado Ejercicio 3](../img/EJERCICIO5.drawio.png)
+ ![Resultado Ejercicio 3](../img/E-R/EJERCICIO5.drawio.png)
 
 ## Diagrama 6
 
- ![Resultado Ejercicio 3](../img/Ejercicio_1%20(1).png)
+ ![Resultado Ejercicio 3](../img/E-R/Ejercicio7.png)
