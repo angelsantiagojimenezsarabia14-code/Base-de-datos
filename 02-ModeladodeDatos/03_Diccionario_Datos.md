@@ -285,7 +285,7 @@ Almacena las diferentes especialidades técnicas o profesionales asociadas a los
 
 ## 9. Diagrama Relacional
 
- ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO2%20(1).png)
+ ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO10.png)
 
  ## EJERCICIO 3
  # Diccionario de Datos de la base de datos de control escolar (Profesores, Cursos y Especialidades)
