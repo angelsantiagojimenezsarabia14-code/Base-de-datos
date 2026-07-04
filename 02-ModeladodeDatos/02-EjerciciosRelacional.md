@@ -8,12 +8,11 @@
 
 ## EJERCICIO 2
 ## Modelo E-R
----
- ![Resultado Ejercicio 2](../img/E-R/EJE2.png)
+---![Resultado Ejercicio 2](../img/E-R/EJE12.PNG)
 
 ##  Modelo Relacional 
 
- ![Resultado Ejercicio 2](../img/Relacional/EJERCICIO2_1.png)
+ ![Resultado Ejercicio 2](../img/Relacional/EJERCICIO11.png)
 ---
  ## EJERCICIO 3
 ## Modelo E-R

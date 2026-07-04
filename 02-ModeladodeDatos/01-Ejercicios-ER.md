@@ -150,6 +150,65 @@ Una empresa encargada de realizar venta de productos:
 ## Diagrama 5
  ![Resultado Ejercicio 3](../img/E-R/EJERCICIO5.drawio.png)
 
-## Diagrama 6
+# EJERCICIO 6
 
- ![Resultado Ejercicio 3](../img/E-R/Ejercicio7.png)
+## 1. Entidades y Atributos Identificados
+* **ALUMNO**
+  * Matrícula (Clave / Único)
+  * Nombre
+  * Apellido1
+  * Apellido2
+  * Correo
+  * Teléfono
+  * FechaNac
+* **CREDENCIAL**
+  * NumCredencial (Clave / Único)
+  * Vigencia
+  * FechaInscripcion
+  * Matrícula (Atributo referencial / Clave foránea)
+* **CURSA** (Entidad de relación / asociativa)
+  * Matrícula (Clave primaria compuesta / Foránea)
+  * ClaveMateria (Clave primaria compuesta / Foránea)
+  * FechaInscripcion
+  * CalifFinal
+* **MATERIA**
+  * ClaveMateria (Clave / Único)
+  * NombreMateria
+  * Créditos
+  * NumProf (Atributo referencial / Clave foránea)
+* **DEPARTAMENTO**
+  * NumDepto (Clave / Único)
+  * Nombre
+  * Edificio
+* **PROFESOR**
+  * NumProf (Clave / Único)
+  * Nombre
+  * Apellido1
+  * Apellido2
+  * NumDepto (Atributo referencial / Clave foránea)
+* **PARTICIPA** (Entidad de relación / asociativa)
+  * NumProf (Clave primaria compuesta / Foránea)
+  * NumProy (Clave primaria compuesta / Foránea)
+  * Rol
+  * FechaInicio
+* **PROYECTO**
+  * NumProy (Clave / Único)
+  * NombreProy
+  * Presupuesto
+* **DEPENDIENTE** (Entidad Débil - depende de Profesor)
+  * NumProf (Clave primaria parcial / discriminante)
+  * Nombre
+  * FechaNac
+  * Parentesco
+
+## 2. Relaciones y Reglas de Negocio Clave
+* **Identificación de Credencial (1:1):** Un alumno posee una única credencial, y cada credencial pertenece a un solo alumno. Se vincula mediante el atributo Matrícula.
+* **Inscripción de Materias (1:N hacia Cursa):** Un alumno puede cursar muchas asignaturas. La relación se gestiona a través de la entidad intermedia CURSA, donde se registra la FechaInscripcion y la CalifFinal.
+* **Asignación de Materias (N:M simplificada a través de Cursa):** Una materia puede ser cursada por muchos alumnos.
+* **Impartición de Clases (1:N):** Un profesor puede impartir muchas materias, pero una materia es impartida por un único profesor (indicado por el atributo NumProf en MATERIA).
+* **Adscripción a Departamento (1:N):** Un profesor pertenece a un único departamento, mientras que un departamento puede albergar a muchos profesores.
+* **Participación en Proyectos (N:M):** Un profesor puede participar en varios proyectos y un proyecto puede contar con la participación de muchos profesores. Esta relación se modela a través de la entidad PARTICIPA, registrando el Rol y la FechaInicio.
+* **Dependientes de Profesores (1:N):** Un profesor puede tener múltiples dependientes asociados (familiares). Es una relación de dependencia donde DEPENDIENTE es una entidad débil que se identifica en conjunto con el NumProf del profesor.
+
+## Diagrama 6
+![Resultado Ejercicio 7](../img/E-R/EJERCICIO7.png)
