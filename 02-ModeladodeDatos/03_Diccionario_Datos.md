@@ -9,7 +9,7 @@
 | Proyecto | Control Escolar |
 | Version | 1.0 |
 | Fecha | Junio 2026 |
-| Elaboro | Ing. Angel Jesus Perez Contreras, MTI | 
+| Elaboro | Angel Santiago Jimenez Sarabia | 
 | SGBD | SQLServer |   
 
 ---
@@ -169,7 +169,7 @@ Registra la inscripción de los alumnos en sus respectivos grupos y sus califica
 
 
 
- ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO1.jpg)
+ ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO1.Png)
 
 ## EJECICIO 2
 # Diccionario de Datos de la base de datos de control escolar (Profesores, Cursos y Especialidades)
@@ -181,7 +181,7 @@ Registra la inscripción de los alumnos en sus respectivos grupos y sus califica
 | Proyecto | Control Escolar - Cursos y Especialidades |
 | Version | 1.0 |
 | Fecha | Junio 2026 |
-| Elaboro | Ing. Angel Jesus Perez Contreras, MTI | 
+| Elaboro | Angel Santiago Jimenez Sarabia | 
 | SGBD | SQLServer |   
 
 ---
@@ -297,7 +297,7 @@ Almacena las diferentes especialidades técnicas o profesionales asociadas a los
 | Proyecto | Control Escolar - Cursos y Especialidades |
 | Version | 1.0 |
 | Fecha | Junio 2026 |
-| Elaboro | Ing. Angel Jesus Perez Contreras, MTI | 
+| Elaboro | Angel Santiago Jimenez Sarabia | 
 | SGBD | SQLServer |   
 
 ---
@@ -415,7 +415,7 @@ Almacena las diferentes especialidades técnicas o profesionales asociadas a los
 | Proyecto | Control de Pedidos y Productos |
 | Version | 1.0 |
 | Fecha | Junio 2026 |
-| Elaboro | Ing. Angel Jesus Perez Contreras, MTI | 
+| Elaboro | Angel Santiago Jimenez Sarabia | 
 | SGBD | SQLServer |   
 
 ---
@@ -550,7 +550,7 @@ Tabla intermedia que detalla el desglose y la cantidad de productos incluidos de
 | Proyecto | Control de Empleados, Departamentos y Proyectos |
 | Version | 1.0 |
 | Fecha | Junio 2026 |
-| Elaboro | Ing. Angel Jesus Perez Contreras, MTI | 
+| Elaboro | Angel Santiago Jimenez Sarabia | 
 | SGBD | SQLServer |   
 
 ---
@@ -722,7 +722,7 @@ Almacena el registro de los familiares directos de los empleados para control de
 | Proyecto | Sistema Integral de Control Escolar, Profesores y Proyectos |
 | Version | 1.0 |
 | Fecha | Junio 2026 |
-| Elaboro | Ing. Angel Jesus Perez Contreras, MTI | 
+| Elaboro | Angel Santiago Jimenez Sarabia | 
 | SGBD | SQLServer |   
 
 ---
@@ -921,3 +921,267 @@ Tabla intermedia que controla los profesores asignados a los diferentes proyecto
 
 ## 9. Diagrama Relacional
  ![Resultado Ejercicio 1](../img/Relacional/EJERCICIO6.png)
+
+ # EJERCICIO 7
+
+# Diccionario de Datos de la Base de Datos de Control Escolar Integral
+
+## 1. Información General
+
+| ELEMENTO | VALOR |
+| :--- | :--- |
+| Proyecto | Sistema Integral de Control Escolar, Profesores y Proyectos |
+| Version | 1.0 |
+| Fecha | Junio 2026 |
+| Elaboró | Angel Santiago Jimenez Sarabia |
+| SGBD | SQL Server |
+
+---
+
+## 2. Descripción del Sistema de Base de Datos
+
+El sistema administra la información académica y administrativa de una institución educativa.
+
+Permite controlar:
+
+* Registro de alumnos.
+* Registro de teléfonos asociados a los alumnos.
+* Credenciales institucionales.
+* Materias impartidas.
+* Historial de materias cursadas.
+* Profesores.
+* Departamentos académicos.
+* Dependientes de los profesores.
+* Proyectos institucionales.
+* Participación de profesores en proyectos.
+
+El objetivo principal es mantener organizada la información académica y administrativa mediante relaciones entre las diferentes entidades de la base de datos.
+
+---
+
+## 3. Catálogo de Restricciones Utilizadas
+
+| CODIGO | SIGNIFICADO |
+| :--- | :--- |
+| PK | Primary Key |
+| FK | Foreign Key |
+| NN | NOT NULL |
+| UQ | UNIQUE |
+| AI | Auto Increment |
+| CK | CHECK |
+| DF | DEFAULT |
+
+---
+
+# 4. Diccionario de Datos
+
+## Tabla: Alumno
+
+**Descripción**
+
+Almacena la información personal de los estudiantes inscritos.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| Matricula | VARCHAR | 20 | PK, NN | Identificador único del alumno |
+| Nombre | VARCHAR | 50 | NN | Nombre del alumno |
+| Apellido1 | VARCHAR | 50 | NN | Primer apellido |
+| Apellido2 | VARCHAR | 50 | | Segundo apellido |
+| Correo | VARCHAR | 100 | NN, UQ | Correo electrónico |
+| FechaNac | DATE | | NN | Fecha de nacimiento |
+
+---
+
+## Tabla: Telefono
+
+**Descripción**
+
+Almacena los números telefónicos registrados por los alumnos.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| TelefonoID | VARCHAR | 15 | PK, NN | Identificador del teléfono |
+| Matricula | VARCHAR | 20 | FK, NN | Alumno propietario |
+| NumeroTotal | VARCHAR | 15 | NN | Número telefónico |
+
+---
+
+## Tabla: Credencial
+
+**Descripción**
+
+Guarda la información de las credenciales institucionales.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| NumCredencial | VARCHAR | 20 | PK, NN | Número único de credencial |
+| FechaInscripcion | DATE | | NN | Fecha de inscripción |
+| Vigencia | DATE | | NN | Fecha de vigencia |
+| Matricula | VARCHAR | 20 | FK, NN, UQ | Alumno propietario |
+
+---
+
+## Tabla: Materia
+
+**Descripción**
+
+Contiene el catálogo de materias.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| ClaveMateria | VARCHAR | 10 | PK, NN | Clave única |
+| NombreMateria | VARCHAR | 100 | NN | Nombre de la materia |
+| Creditos | INT | | NN | Créditos asignados |
+| NumProf | INT | | FK, NN | Profesor responsable |
+
+---
+
+## Tabla: Cursa
+
+**Descripción**
+
+Representa la relación entre alumnos y materias.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| Matricula | VARCHAR | 20 | PK, FK, NN | Alumno inscrito |
+| ClaveMateria | VARCHAR | 10 | PK, FK, NN | Materia cursada |
+| FechaInscripcion | DATE | | NN | Fecha de inscripción |
+| CalifFinal | DECIMAL | 4,2 | CK | Calificación final |
+
+---
+
+## Tabla: Profesor
+
+**Descripción**
+
+Registra los profesores de la institución.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| NumProf | INT | | PK, AI, NN | Identificador del profesor |
+| Nombre | VARCHAR | 50 | NN | Nombre |
+| Apellido1 | VARCHAR | 50 | NN | Primer apellido |
+| Apellido2 | VARCHAR | 50 | | Segundo apellido |
+| NumDepto | INT | | FK, NN | Departamento al que pertenece |
+
+---
+
+## Tabla: Departamento
+
+**Descripción**
+
+Registra los departamentos académicos.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| NumDepto | INT | | PK, AI, NN | Identificador |
+| Nombre | VARCHAR | 100 | NN | Nombre del departamento |
+| Edificio | VARCHAR | 50 | | Edificio asignado |
+
+---
+
+## Tabla: Proyecto
+
+**Descripción**
+
+Contiene los proyectos institucionales.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| NumProy | INT | | PK, AI, NN | Número del proyecto |
+| NombreProy | VARCHAR | 150 | NN | Nombre del proyecto |
+| Presupuesto | DECIMAL | 12,2 | NN | Presupuesto asignado |
+
+---
+
+## Tabla: Participa
+
+**Descripción**
+
+Relaciona profesores con proyectos.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| NumProf | INT | | PK, FK, NN | Profesor |
+| NumProy | INT | | PK, FK, NN | Proyecto |
+| Rol | VARCHAR | 50 | NN | Rol desempeñado |
+| FechaInicio | DATE | | NN | Fecha de inicio |
+
+---
+
+## Tabla: Dependiente
+
+**Descripción**
+
+Registra los dependientes de cada profesor.
+
+| CAMPO | TIPO | LONGITUD | RESTRICCIONES | DESCRIPCIÓN |
+| :--- | :--- | :--- | :--- | :--- |
+| NumProf | INT | | PK, FK, NN | Profesor |
+| Nombre | VARCHAR | 100 | PK, NN | Nombre del dependiente |
+| FechaNac | DATE | | NN | Fecha de nacimiento |
+| Parentesco | VARCHAR | 50 | NN | Relación familiar |
+
+---
+
+# 5. Relaciones en la Base de Datos
+
+| Relación | Cardinalidad | Descripción |
+| :--- | :--- | :--- |
+| Alumno → Telefono | 1:N | Un alumno puede tener varios teléfonos. |
+| Alumno → Credencial | 1:1 | Cada alumno posee una credencial. |
+| Alumno → Cursa | 1:N | Un alumno puede cursar muchas materias. |
+| Materia → Cursa | 1:N | Una materia puede ser cursada por muchos alumnos. |
+| Profesor → Materia | 1:N | Un profesor puede impartir varias materias. |
+| Departamento → Profesor | 1:N | Un departamento administra varios profesores. |
+| Profesor → Dependiente | 1:N | Un profesor puede registrar varios dependientes. |
+| Profesor → Participa | 1:N | Un profesor puede participar en varios proyectos. |
+| Proyecto → Participa | 1:N | Un proyecto puede tener varios profesores. |
+
+---
+
+# 6. Llaves Foráneas
+
+| Tabla | Campo FK | Referencia |
+| :--- | :--- | :--- |
+| Telefono | Matricula | Alumno(Matricula) |
+| Credencial | Matricula | Alumno(Matricula) |
+| Cursa | Matricula | Alumno(Matricula) |
+| Cursa | ClaveMateria | Materia(ClaveMateria) |
+| Materia | NumProf | Profesor(NumProf) |
+| Profesor | NumDepto | Departamento(NumDepto) |
+| Dependiente | NumProf | Profesor(NumProf) |
+| Participa | NumProf | Profesor(NumProf) |
+| Participa | NumProy | Proyecto(NumProy) |
+
+---
+
+# 7. Integridad Referencial
+
+| Código | Descripción |
+| :--- | :--- |
+| IR-01 | No puede existir un teléfono sin un alumno registrado. |
+| IR-02 | No puede existir una credencial sin un alumno. |
+| IR-03 | No puede registrarse una materia cursada sin alumno y materia existentes. |
+| IR-04 | No puede asignarse una materia a un profesor inexistente. |
+| IR-05 | No puede eliminarse un departamento mientras existan profesores asociados. |
+| IR-06 | No puede eliminarse un profesor mientras tenga dependientes o proyectos asignados. |
+
+---
+
+# 8. Reglas de Negocio
+
+| Código | Regla |
+| :--- | :--- |
+| RN-01 | Un alumno solo puede tener una credencial activa. |
+| RN-02 | La vigencia de la credencial debe ser mayor a la fecha de inscripción. |
+| RN-03 | La calificación final debe estar entre 0 y 10. |
+| RN-04 | El presupuesto de un proyecto debe ser mayor que cero. |
+| RN-05 | Un profesor puede impartir varias materias pero cada materia tiene un solo profesor responsable. |
+| RN-06 | Un profesor puede participar en varios proyectos desempeñando distintos roles. |
+
+---
+
+# 9. Diagrama Relacional
+![Resultado Ejercicio 1](../img/Relacional/Ejercicio_7.png)
